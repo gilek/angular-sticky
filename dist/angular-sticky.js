@@ -470,6 +470,7 @@ angular.module('hl.sticky', [])
 					// bind events
 					throttledResize = throttle(resize, $stickyElement.defaults.checkDelay, {leading: false});
 					windowEl.on('resize', throttledResize);
+                    windowEl.on('click', throttledResize);
 					windowEl.on('scroll', drawEvent);
 
 					unbindViewContentLoaded = $rootScope.$on('$viewContentLoaded', throttledResize);
